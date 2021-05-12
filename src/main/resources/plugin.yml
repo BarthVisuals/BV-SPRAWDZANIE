@@ -1,0 +1,14 @@
+name: bv-Sprawdzanie
+version: ${project.version}
+main: pl.barthvisuals.bvsprawdzanie.Main
+api-version: 1.16
+author: BarthVisuals
+description: Plugin na sprawdzanie graczy
+
+commands:
+  sprawdzanie:
+    aliases: [ check, sprawdz, spr, ss ]
+  zglos:
+    aliases: [ report, zgloszenie ]
+  przyznaje:
+    aliases: [ przyznaj ]

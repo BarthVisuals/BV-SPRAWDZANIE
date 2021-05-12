@@ -1,0 +1,45 @@
+## Konfiguracja komendy /zglos
+## Zmienne:
+## {ZGLOS_PREFIX} - wyświetla prefix podany w "zglos-prefix"
+## {ZGLOS_PLAYER_SENDER} - osoba zgłaszająca
+## {ZGLOS_PLAYER_REPORTED} - osoba zgłoszona
+## {ZGLOS_REASON) - powód zgłoszenia
+## \n - dalszą część wiadomości wypisuje w nowej linijce (przykład: cześć\nhej - gdzie "hej" będzie w nowej linii)
+
+zglos-on: true
+zglos-prefix: "&8[&cZGŁOŚ&8]"
+zglos-usage: "&8» &7Poprawne użycie: &c/zglos <nick> <powód>"
+zglos-message-admins: "{ZGLOS_PREFIX} &7Gracz: &c{ZGLOS_PLAYER_SENDER} &7zgłosił gracza: &c{ZGLOS_PLAYER_REPORTED}\n{ZGLOS_PREFIX} &7Powód: §c{ZGLOS_REASON}"
+zglos-pvmessage: "§8» §aAdministracja została poinformowana!"
+
+## Konfiguracja sprawdzania
+## Zmienne:
+## {SPR_PREFIX} - wyświetla prefix podany w "spr-prefix"
+## {SPR_ADMIN} - administrator który rozpoczął sprawdzanie
+## {SPR_PLAYER} - osoba sprawdzana
+spr-prefix: "&8[&cSPRAWDZANIE&8]"
+spr-nopermissions: "§8» §cNie masz uprawnień (sprawdzanie.all)! ❌"
+
+spr-message-on-chat: "{SPR_PREFIX} &7Administrator: &c{SPR_ADMIN} &7rozpoczyna sprawdzanie gracza: &c{SPR_PLAYER}"
+spr-clear-message-on-chat: "{SPR_PREFIX} &7Gracz: &c{SPR_PLAYER} &7okazał się czysty :)"
+spr-message-on-priv: "&4Jesteś sprawdzany! Nie wylogowywuj się ponieważ zostaniesz zbanowany! Dalsze instrukcje poda ci administrator!"
+spr-cmd-message-on-priv: "&8» &cNie możesz używać tej komendy podczas sprawdzania!"
+spr-przyznaje-message-on-chat: "{SPR_PREFIX} &7Gracz: &c{SPR_PLAYER} &7przyznał się do używania cheatów!"
+spr-logout-message-on-chat: "{SPR_PREFIX} &7Gracz: &c{SPR_PLAYER} &7wylogował się podczas sprawdzania!"
+spr-newspawn: "§8» §cUstawiono nowe miejsce sprawdzania!"
+spr-errorw-mesage: "&8» &cNie jesteś sprawdzany!"
+spr-errorlist-message: "&8» &cNikogo nie sprawdzasz!"
+spr-poffline-message: "§8» §cNie ma takiego gracza online!"
+spr-checkme-message: "§8» §cNie możesz sprawdzać samego siebie!"
+spr-checksecoundplayer-message: "§8» §cNie możesz sprawdzać kilku graczy w tym samym czasie!"
+
+spr-brakwspolpracy-command: "tempban {SPR_PLAYER} 10d Brak współpracy"
+spr-przyznaje-command: "tempban {SPR_PLAYER} 3d Przyznanie sie do cheatów"
+spr-logout-command: "ban {SPR_PLAYER} Wylogowanie się podczas sprawdzania"
+
+spr-allowed-commands:
+  - "/helpop"
+  - "/zglos"
+  - "/msg"
+  - "/r"
+  - "/reply"
